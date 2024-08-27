@@ -1,0 +1,54 @@
+.input-container {
+    display: flex;
+    margin: 15px;
+    position: absolute;
+    gap: 5px;
+    top: 10%;
+    left: 25%;
+}
+
+.input__contact-field {
+    
+    min-height: 50px;
+}
+/* Это стили для не валидных полей */
+input:invalid {
+    border-color: #900;
+    background-color: #fdd;
+  }
+  
+  input:focus:invalid {
+    outline: none;
+  }
+  
+.contact-name, .job-title, .phone-number {
+    height: 30px;
+    width: 200px;
+}
+
+.contact-name:hover, .job-title:hover, .phone-number:hover {
+    border: 2px solid #ffd4d4;
+}
+
+  /* Это стили для кастомных сообщений об ошибке */
+.error {
+    display: flex;
+    flex-flow: column wrap;
+    width: 208px;
+    font-size: 85%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+}
+
+.input__submit {
+    height: 35px;
+    width: 80px;
+    border-radius: 10px;
+}
+
+.input__submit:hover {
+    background: #fcc17d;
+    border: 2px solid #ca8300;
+    color: #fff;
+}

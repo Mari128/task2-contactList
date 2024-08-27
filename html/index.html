@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+
+    <script src="../js/utils.js" defer></script>
+    <script src="../js/validation-data.js" defer></script>
+    <script src="../js/contact.js" defer></script>
+    <script src="../js/main.js" defer></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/input.css">
+    <link rel="stylesheet" href="../css/listContact.css">
+    <link rel="stylesheet" href="../css/search.css">
+    <link rel="stylesheet" href="../css/editContact.css">
+</html>
+<header>
+    <meta charset="utf-8">
+    <title>Contact List</title>
+</header>
+<body>
+    <div class="container">
+        <h1 class="h1__title">Contact List on JS</h1>
+        <a class="a__link_git" href="https://github.com/Mari128/task2-contactList">GitHub Repository link</a>
+        <div class="input-container">
+            <div class="input__contact-field">
+                <input type="text" class="contact-name" id="contact-name-id" placeholder="Name" required minlength="2">
+                <span class="error" id="contact-name-error"></span>
+            </div>
+            <div class="input__contact-field">
+                <input type="text" class="job-title" id="job-title-id" placeholder="Job title" required minlength="2">
+                <span class="error" id="job-title-error"></span>
+            </div>
+            <div class="input__contact-field">
+                <input type="tel" class="phone-number" id="phone-number-id" placeholder="Phone (+x xxx xxx xx xx)" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required>
+                <span class="error" id="phone-number-error"></span>
+            </div>
+            <input type="button" id="btn__add-contact" class="input__submit" value="Add">
+            <input type="button" id="btn__clear-list" class="input__submit" value="Clear List">
+            <input type="button" id="btn__search-contact" class="input__submit" value="Search">
+        </div>
+        <div class="contact-container">
+            <div class="contact-column">
+                <div class="contact__element"><div class="element__letter" data-id="a">A</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="b">B</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="c">C</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="d">D</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="e">E</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="f">F</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="g">G</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="h">H</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="i">I</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="j">J</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="k">K</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="l">L</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="m">M</div></div>
+            </div>
+            <div class="contact-column">
+                <div class="contact__element"><div class="element__letter" data-id="n">N</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="o">O</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="p">P</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="q">Q</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="r">R</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="s">S</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="t">T</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="u">U</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="v">V</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="w">W</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="x">X</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="y">Y</div></div>
+                <div class="contact__element"><div class="element__letter" data-id="z">Z</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="search-container">
+        <div class="search-container__item">                
+            <h1>Search contact</h1>
+            <input type="text" placeholder="Search..." class = "search-input">
+            <div class="search-output"></div>
+            <input type="submit" class = "search-show-all" id= "btn__search-show-all" value = "Show all">
+            <i class="fa fa-times-circle search-close" aria-hidden="true"></i>
+        </div>
+        <div class="search-background-form"></div>
+    </div>
+
+    <div class="edit-contact-container">
+        <div class="edit-contact-container__item">                
+            <h1>Edit contact:</h1>
+            <div class="edit-input-container">
+                <div class="edit__contact-field">
+                    <input type="text" class="edit-contact-name" id="edit-contact-name-id" placeholder="Name" required minlength="2">
+                    <span class="error" id="edit-contact-name-error"></span>
+                </div>
+                <div class="edit__contact-field">
+                    <input type="text" class="edit-job-title" id="edit-job-title-id" placeholder="Job title" required minlength="2">
+                    <span class="error" id="edit-job-title-error"></span>
+                </div>
+                <div class="edit__contact-field">
+                    <input type="tel" class="edit-phone-number" id="edit-phone-number-id" placeholder="Phone (+x xxx xxx xx xx)" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required>
+                    <span class="error" id="edit-phone-number-error"></span>
+                </div>
+            </div>
+            <input type="submit" class = "edit-save" id= "btn__edit-save" value = "Save">
+            <i class="fa fa-times-circle edit-close"  aria-hidden="true"></i>
+        </div>
+        <div class="edit-background-form"></div>
+    </div>
+
+
+</body>

@@ -1,0 +1,26 @@
+html, body, .container {
+    position:relative;
+    height:100%;
+    margin:0;
+    padding:0;
+    text-align: center;
+    background-image: url('https://avatars.mds.yandex.net/i?id=8fea89fc46970faa3de38dc6506f8930-4010903-images-thumbs&n=13');
+}
+
+.h1__title {
+    font-size: 40px;
+    margin: 10;
+    padding:0;
+}
+
+.a__link-git {
+    margin: 10px 0 30px 0;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: .5s; 
+}
+
+.a__link-git:hover {
+    border-bottom: 2px solid #000; }
+
