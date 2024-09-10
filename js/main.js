@@ -45,7 +45,7 @@ document.addEventListener("click", function (e) {
 });
 
 document.getElementById("btn__search-contact").addEventListener('click', function () {
-    addContact();
+    handleAddContactButtonClick();
 });
 
 document.getElementById('btn__search-contact').addEventListener('click', function () {
@@ -89,7 +89,7 @@ document.getElementById('btn__search-show-all').addEventListener('click', functi
 });
 
 document.getElementById('btn__add-contact').addEventListener('click', function () {
-    addContact();
+    handleAddContactButtonClick();
 });
 
 document.getElementById('btn__clear-list').addEventListener('click', function () {

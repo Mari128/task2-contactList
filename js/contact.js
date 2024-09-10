@@ -5,7 +5,7 @@ function Contact(name, job, number) {
     this.job = job;
     this.number = number;
 
-    Contact.prototype.toString = function() {
+    toString = function() {
         return `name: ${this.name}, vacancy: ${this.job}, phone: ${this.number}`;
     }
 }
@@ -71,21 +71,19 @@ function parseContact(contact) {
                     contact[3].trim());
 }
 
-function addContact() {
+function handleAddContactButtonClick() {
     if (isValidField()) {
-        let letter = contactName.value.toString()[0].toLowerCase();
-        let contactList = JSON.parse(localStorage.getItem(letter)) ?? [];
+        const letter = contactName.value.toString()[0].toLowerCase();
         let contact = new Contact(contactName.value, jobTitle.value, phoneNumber.value);
-        contactList.push(JSON.stringify(contact));
-        localStorage.setItem(letter, JSON.stringify(contactList));
-    
-        let newContactList = JSON.parse(localStorage.getItem(letter));
-        increaseCounter(letter, newContactList);
+        
+        addContact(letter, contact);
+
+        increaseCounter(letter, globalContactList);
 
         if (hiddenContacts(letter) > 1) {
             addInfoContactToLetter(contact, letter);
         } else {
-            for(let contact of newContactList) {
+            for(let contact of globalContactList) {
                 addInfoContactToLetter(JSON.parse(contact), letter);
             }
         }
@@ -93,6 +91,12 @@ function addContact() {
         jobTitle.value = ""; 
         phoneNumber.value = ""; 
     }
+}
+
+function addContact(letter, contact) {
+    globalContactList = JSON.parse(localStorage.getItem(letter)) ?? [];
+    globalContactList.push(JSON.stringify(contact));
+    localStorage.setItem(letter, JSON.stringify(globalContactList));
 }
 
 function removeContactList(letter, contact) {
